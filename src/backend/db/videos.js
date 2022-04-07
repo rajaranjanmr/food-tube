@@ -1,21 +1,146 @@
+import { v4 as uuid } from "uuid";
+import biryaniimg from "../../assets/images/biryaniimg.jpeg"
+import thaliimg from "../../assets/images/thalis.jpeg"
+import chineseimg from "../../assets/images/pannerchilli.jpeg"
+
 /**
  * Videos Database can be added here.
  * You can add videos of your wish with different attributes
  * */
 
-export const videos = [
+ export const videos = [
   {
-    _id: "Wo5dMEP_BbI",
-    title: "Awesome Video about Coding",
-    description:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
-    creator: "Soham Shah",
+    _id: uuid(),
+    title: "southindian biryani",
+    description:"its south indian based biryani",
+    creator: "Ran",
+    categoryName:"south",
+    postDate : "5 months ago",
+    views : "7.3k",
+    image:biryaniimg,
+    channel:"BirTube"
   },
   {
-    _id: "F_Riqjdh2oM",
-    title: "Neural Networks from Scratch - P.1 Intro and Neuron Code",
-    creator: "Sentdex",
-    description:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+    _id: uuid(),
+    title: "southindian biryani",
+    description:"its south indian based biryani",
+    creator: "Ran",
+    categoryName:"south",
+    postDate : "5 months ago",
+    views : "7.3k",
+    image:biryaniimg,
+    channel:"BirTube"
+  },{
+    _id: uuid(),
+    title: "southindian biryani",
+    description:"its south indian based biryani",
+    creator: "Ran",
+    categoryName:"south",
+    postDate : "5 months ago",
+    views : "7.3k",
+    image:biryaniimg,
+    channel:"BirTube"
+  },
+  {
+    _id: uuid(),
+    title: "southindian biryani",
+    description:"its south indian based biryani",
+    creator: "Ran",
+    categoryName:"south",
+    postDate : "5 months ago",
+    views : "7.3k",
+    image:biryaniimg,
+    channel:"BirTube"
+  },
+  //north
+  
+  {
+    _id: uuid(),
+    title: "special thalis",
+    description:"its traitional north indian food",
+    creator: "Isha",
+    categoryName:"north",
+    postDate : "5 months ago",
+    views : "7.3k",
+    image:thaliimg,
+    channel:"ThaliTube"
+  },
+  {
+    _id: uuid(),
+    title: "special thalis",
+    description:"its traitional north indian food",
+    creator: "Isha",
+    categoryName:"north",
+    postDate : "5 months ago",
+    views : "7.3k",
+    image:thaliimg,
+    channel:"ThaliTube"
+  },
+  {
+    _id: uuid(),
+    title: "special thalis",
+    description:"its traitional north indian food",
+    creator: "Isha",
+    categoryName:"north",
+    postDate : "5 months ago",
+    views : "7.3k",
+    image:thaliimg,
+    channel:"ThaliTube"
+  },
+  {
+    _id: uuid(),
+    title: "special thalis",
+    description:"its traitional north indian food",
+    creator: "Isha",
+    categoryName:"north",
+    postDate : "5 months ago",
+    views : "7.3k",
+    image:thaliimg,
+    channel:"ThaliTube"
+  },
+  //east based 
+  {
+    _id: uuid(),
+    title: "special chinese",
+    description:"its delicious chinese food",
+    creator: "Isha",
+    categoryName:"east",
+    postDate : "5 months ago",
+    views : "7.3k",
+    image:chineseimg,
+    channel:"ThaliTube"
+  },
+  {
+    _id: uuid(),
+    title: "special chinese",
+    description:"its delicious chinese food",
+    creator: "Isha",
+    categoryName:"east",
+    postDate : "5 months ago",
+    views : "7.3k",
+    image:chineseimg,
+    channel:"ThaliTube"
+  },
+  {
+    _id: uuid(),
+    title: "special chinese",
+    description:"its delicious chinese food",
+    creator: "Isha",
+    categoryName:"east",
+    postDate : "5 months ago",
+    views : "7.3k",
+    image:chineseimg,
+    channel:"ThaliTube"
+  },
+  {
+    _id: uuid(),
+    title: "special chinese",
+    description:"its delicious chinese food",
+    creator: "Isha",
+    categoryName:"east",
+    postDate : "5 months ago",
+    views : "7.3k",
+    image:chineseimg,
+    channel:"ThaliTube"
   },
 ];
