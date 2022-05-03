@@ -1,0 +1,183 @@
+:root {
+    --cart-card-background-color: #082032;
+    --cart-card-aliceblue-color: aliceblue;
+    --cart-card-a-hover-color: blueviolet;
+    --cart-card-white-color: white;
+    --cart-card-black-color: black;
+  }
+  .card {
+    box-shadow: 0 0 10px 10px var(--cart-card-aliceblue-color);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    background-color: var(--cart-card-aliceblue-color);
+  }
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 11.2px;
+    padding-bottom: 8px;
+    color: var(--cart-card-white-color);
+    background-color: var(--cart-card-background-color);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    position: relative;
+    font-weight: 800;
+    top: 2rem;
+  }
+  .card button {
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .card button:hover {
+    color: var(--cart-card-a-hover-color);
+    opacity: 1;
+    border: none;
+    background-color: var(--primary-color);
+  }
+  .cards {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 100%;
+    flex-wrap: wrap-reverse;
+    z-index: 0;
+    position: absolute;
+    top: 10rem;
+  }
+  .card-btn-add {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .card {
+    width: 40%;
+  }
+  .quantity-up-down {
+    margin-top: 4.8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .card-checkout {
+    min-width: 25rem;
+    background-color: var(--cart-card-aliceblue-color);
+    position: absolute;
+    left: 38%;
+    top: 40rem;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 15px var(--cart-card-aliceblue-color);
+  }
+  @media only screen and (max-width: 800px) {
+    .card-checkout {
+      width: 60%;
+      background-color: var(--cart-card-aliceblue-color);
+      left: 38%;
+      bottom: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px 15px var(--cart-card-aliceblue-color);
+    }
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+    .card {
+      width: 60%;
+    }
+  }
+  .card-checkout h1 {
+    border-bottom: 1px solid black;
+    text-align: center;
+  }
+  .bill-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1rem;
+  }
+  .price-det {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .discount-det {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .delivery-det {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .tot-amount-det {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid var(--cart-card-black-color);
+    border-bottom: 1px solid var(--cart-card-black-color);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .card-btn-checkout {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.4rem;
+    margin-top: 0.2rem;
+  }
+  .card-btn-checkout a {
+    border: none;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.7em;
+    padding-bottom: 0.5rem;
+    color: var(--cart-card-white-color);
+    background-color: #082032;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    position: relative;
+    font-weight: 800;
+    top: 1rem;
+    left: 0rem;
+    border-radius: 10px;
+  }
+  .card-btn-checkout a:hover {
+    background-color: var(--primary-color);
+  }
+  
+  .header-cart {
+    position: absolute;
+    top: 5rem;
+    width: 100%;
+    text-align: center;
+    background-color: var(--cart-card-aliceblue-color);
+    padding: 1rem;
+    border-radius: 15px;
+    margin-top: 1rem;
+  }
+  .cards-ecom-change {
+    top: 14rem;
+  }
+  
