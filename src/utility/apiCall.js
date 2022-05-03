@@ -178,11 +178,13 @@ const getPlaylists = async () => {
 };
 const addPlaylist = async (playlist) => {
 	try {
+		console.log('haha',playlist)
 		const response = await axios.post(
 			"/api/user/playlists",
-			{ playlist },
+			{ playlist: playlist },
 			{ headers }
 		);
+		console.log("response inside api",response.data.playlists)
 		return { playlists: response.data.playlists, success: true };
 	} catch (err) {
 		console.log(err);
@@ -209,14 +211,19 @@ const getPlaylistById = async (id) => {
 		return { playlist: [], success: true };
 	}
 };
-const addToSpecificPlaylist = async (id, currentVideo) => {
+const addToSpecificPlaylist = async (video, id) => {
 	try {
-		const response = await axios.post(
-			`/api/user/playlists/${id}`,
-			{ video: currentVideo },
-			{ headers }
-		);
-		return { playlist: response.data.playlist, success: true };
+		const response = await axios({
+			method: 'post',
+			url: `/api/user/playlists/${id}`,
+			headers:{authorization: localStorage.getItem('token')},
+			data: {
+				video: video
+			}
+		})
+		if(response.status === 201) {
+			return { playlist: response.data.playlist, success: true };
+		}
 	} catch (err) {
 		console.log(err);
 		return { playlist: [], success: false };

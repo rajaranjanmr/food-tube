@@ -50,8 +50,8 @@ body {
   padding: 1rem;
 }
 .logo img {
-  width: 213px;
-  height: 72px;
+  width: 11.8rem;
+  height: 4rem;
   padding: 0.5rem;
   z-index: 1;
   float: left;
@@ -259,23 +259,6 @@ iframe {
   border-radius: 10px;
 }
 
-/* .card{
-  display:flex;
-  flex-direction:column;
-
-}
-.below-text-container{
-  display:flex;
-  flex-direction:column;
-  color:red;
-}
-.title-video{
-  font-size:1rem;
-}
-.lower-content{
-  display: flex;
-  flex-direction: row;
-} */
 .navbar-item input[type=text] {
     float: right;
     padding: 6px;
@@ -310,8 +293,8 @@ iframe {
     padding-right: 2rem;
     padding-top: 0.7em;
     padding-bottom: 0.5rem;
-    color: white;
-    background-color: #082032;
+    color: var(--clhome-white-color);
+    background-color: var(--clhome-black-color);
     text-align: center;
     cursor: pointer;
     font-size: 18px;
@@ -324,5 +307,21 @@ iframe {
   }
   .fa-eye{
     position:relative;
+
+  }
+  .container-form{
+    display:flex;
+    flex-direction:column;
+  }
+  .playlist-list-container{
+    display:flex;
+    flex-direction:column;
+    display:inline;
+    gap:5px;
+    justify-content:flex-start ;
     
+  }
+  .input-playlist{
+    border-radius:0px;
+    size:5px;
   }

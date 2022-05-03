@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,100&display=swap");
+* {
+  font-family: sans-serif;
+  letter-spacing: 1px;
+}
+:root {
+  --primary-color: #f6830f;
+}
+.playlist-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: start;
+}
+.playlist-name {
+  border-bottom: 1px solid black;
+  padding-bottom: 1rem;
+}
+.playlist-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 60%;
+  background-color: aliceblue;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  gap: 1rem;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+  top: 5rem;
+  left: 10%;
+  cursor: pointer;
+}
+.show-playlist {
+  padding: 30px;
+  color: red;
+}
+.button-container-playlist {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  background-color: aliceblue;
+  padding: 4rem;
+  position: relative;
+  top: 5rem;
+  gap: 2rem;
+  justify-content: center;
+  left: 40%;
+  border-radius: 15px;
+}
+button .button-container-playlist {
+  outline: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.7em;
+  padding-bottom: 0.5rem;
+  color: white;
+  background-color: #082032;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 10px;
+  text-align: center;
+  font-style: bold;
+}
+.button-container-playlist button:hover {
+  background-color: var(--primary-color);
+}
+.show-playlist {
+  outline: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.7em;
+  padding-bottom: 0.5rem;
+  color: white;
+  background-color: #082032;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 10px;
+  text-align: center;
+  font-style: bold;
+}
+.show-playlist button:hover {
+  background-color: var(--primary-color);
+}
+.playlist-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  position: relative;
+  top: 10rem;
+  text-align: center;
+  position: relative;
+  left: 20%;
+}
+.channel-name {
+  display: inline;
+}
+.creator-name {
+  display: inline;
+}
+.time-stamp {
+  display: inline;
+}
+.thumbnail{
+width:100%;
+}

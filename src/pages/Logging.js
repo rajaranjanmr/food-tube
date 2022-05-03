@@ -1,6 +1,7 @@
-import {useState,useEffect} from "react"
-import "../components/clhome.css"
-import imageavtaar from "../assets/images/avatar-the-grinch-green-plant-recycling-symbol-food-transparent-png-1652162.png"
+import {useState} from "react";
+import "../components/clhome.css";
+import {Link} from "react-router-dom";
+import imageavtaar from "../assets/images/avatar-the-grinch-green-plant-recycling-symbol-food-transparent-png-1652162.png";
 function Logging(){
     
   const [displayLogIn, setDisplayLogIn] = useState("none");
@@ -30,7 +31,6 @@ function Logging(){
         </button>
       </div>
       <div
-        id="idlogin"
         className="login-container"
         style={{ display: displayLogIn, zIndex: "3" }}
       >
@@ -41,13 +41,13 @@ function Logging(){
             </span>
             <img
               src={ imageavtaar }
-              alt="avataar image icon"
+              alt="avataar icon"
               className="avatar"
             />
           </div>
 
           <div className="container-form">
-            <label for="uname">
+            <label htmlFor="uname">
               <b>Email</b>
             </label>
             <input
@@ -57,7 +57,7 @@ function Logging(){
               required
             />
 
-            <label for="psw">
+            <label htmlFor="psw">
               <b>Password</b>
             </label>
             <input
@@ -80,13 +80,12 @@ function Logging(){
               Cancel
             </button>
             <span className="psw">
-              Forgot <a href="#">password?</a>
+              Forgot <Link to="#">password?</Link>
             </span>
           </div>
         </form>
       </div>
       <div
-        id="idsignup"
         className="login-container"
         style={{ display: displaySignIn }}
       >
@@ -94,7 +93,6 @@ function Logging(){
           <div className="imgcontainer">
             <span
               className="close"
-              id="close-singup"
               onClick={clickSignInHandler}
             >
               &times;
@@ -103,7 +101,7 @@ function Logging(){
           </div>
 
           <div className="container-form">
-            <label for="uname">
+            <label htmlFor="uname">
               <b>Firstname</b>
             </label>
             <input
@@ -113,7 +111,7 @@ function Logging(){
               required
             />
 
-            <label for="uname">
+            <label htmlFor="uname">
               <b>Lastname</b>
             </label>
             <input
@@ -122,7 +120,7 @@ function Logging(){
               name="lname"
               required
             />
-            <label for="uname">
+            <label htmlFor="uname">
               <b>Email</b>
             </label>
             <input
@@ -132,7 +130,7 @@ function Logging(){
               required
             />
 
-            <label for="psw">
+            <label htmlFor="psw">
               <b>Password</b>
             </label>
             <input
@@ -141,7 +139,7 @@ function Logging(){
               name="psw"
               required
             />
-            <label for="psw-repeat">
+            <label htmlFor="psw-repeat">
               <b>Repeat Password</b>
             </label>
             <input
@@ -157,7 +155,6 @@ function Logging(){
             <button className="signup-btn-bottom cancel-btn">Sign Up</button>
             <button
               className="cancel-btn-signup cancel-btn"
-              id="cancel-btn-signup"
               onClick={clickSignInHandler}
             >
               Cancel

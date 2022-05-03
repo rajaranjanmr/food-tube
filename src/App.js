@@ -1,5 +1,4 @@
 import "./App.css";
-import logo from "./logo.png";
 import {Home} from "./pages/Home"
 import { Routes, Route } from "react-router-dom";
 import {Navigation} from "./components/Navigation"
@@ -11,6 +10,7 @@ import { History } from "./pages/History";
 import { WatchLater } from "./pages/WatchLater";
 import { Logging } from "./pages/Logging";
 import { LikedVideo } from "./pages/LikedVideo";
+import PlaylistPage from "./pages/PlaylistPage";
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
       <Route path="/watchlater" element={<WatchLater />} />
       <Route path="/login" element={<Logging/>} />
       <Route path="/likedvideo" element={<LikedVideo/>} />
-
+      <Route path="/playlistpage" element={<PlaylistPage/>} />
       </Routes>
     </div>
   );

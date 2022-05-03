@@ -28,7 +28,34 @@ const VideoReducerFunction = (state, action) => {
 			return {
 				...state,
 				history : action.payload
-			}
+			};
+			case "SET_PLAYLISTS":
+			return {
+				...state,
+				playlists: action.payload,
+			};
+		case "SET_TEMP_ID":
+			{
+				console.log("Inside setplaylistBY id")
+			return {
+				...state,
+				playlists: state.playlists.map((item) =>{
+					console.log("Debug: ",action.payload._id,item._id)
+					return	(item.id === action.payload.id ? action.payload : item)
+				}),
+			};
+		}
+		case "RESET_VIDEO_STATE":
+			return {
+				...state,
+				watchlater: [],
+				likedvideos: [],
+				history: [],
+				playlists: [],
+				filters: {
+					categoryName: "All",
+				},
+			};
 			
 		default:
 			return state;

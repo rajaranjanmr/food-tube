@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
-import {Navigation} from "./components/Navigation"
 import { VideoContextProvider } from "./context/video-page-context";
 import { BrowserRouter as Router } from "react-router-dom"
 // Call make Server
