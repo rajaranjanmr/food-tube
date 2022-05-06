@@ -2,7 +2,9 @@ import navimage from "../assets/images/logovideo.png";
 import "./navigation.css";
 import "./clhome.css";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/auth-context";
 function Navigation() {
+  const {isLoggedIn} = useAuth();
   return (
     <div className="top-section">
       <div className="container-logo">
@@ -31,13 +33,19 @@ function Navigation() {
           <li>
             <Link to="/watchlater">WatchLater</Link>
           </li>
+          {!isLoggedIn &&
+
           <li>
             <Link to="/login">Login</Link>
           </li>
-          
+}
+{isLoggedIn &&
+
           <li>
             <Link to="/logout">Logout</Link>
+            
           </li>
+}
           
         </ul>
       </div>

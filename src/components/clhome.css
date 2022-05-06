@@ -277,6 +277,20 @@ iframe {
       border-radius: 15px;
   
   }
+  .button-container-main {
+    display: flex;
+  flex-direction: column;
+  width: 500px;
+  background-color: aliceblue;
+  padding: 4rem;
+  position: relative;
+  top: 10rem;
+  gap: 2rem;
+  justify-content: center;
+  left: 40%;
+  border-radius: 15px;
+
+}
   .button-container button {
     outline: 0;
     padding-left: 2rem;
@@ -292,7 +306,26 @@ iframe {
     text-align: center;
     font-weight: 800;
   }
+  .button-container-main button {
+    outline: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.7em;
+    padding-bottom: 0.5rem;
+    color: var(--clhome-white-color);
+    background-color: var(--clhome-black-color);
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 800;
+  }
+  
   .button-container button:hover {
+    background-color: var(--primary-color);
+  }
+  .button-container-main button:hover {
     background-color: var(--primary-color);
   }
   .fa-eye{

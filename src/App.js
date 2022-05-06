@@ -12,8 +12,10 @@ import { Logging } from "./pages/Logging";
 import { LikedVideo } from "./pages/LikedVideo";
 import PlaylistPage from "./pages/PlaylistPage";
 import { RequiresAuth } from "./RequiresAuth";
+import { useAuth } from "./context/auth-context";
 
 function App() {
+  const {isLoggedIn} = useAuth();
   return (
     <div className="App">
       <Navigation/>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../components/clhome.css";
 import { users } from "../backend/db/users";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate,Navigate } from "react-router-dom";
 import imageavtaar from "../assets/images/avatar-the-grinch-green-plant-recycling-symbol-food-transparent-png-1652162.png";
 import { useAuth } from "../context/auth-context";
 import { Toast } from "../components/Toast";
@@ -32,6 +32,7 @@ function Logging() {
   
   const navigate = useNavigate();
   const location = useLocation();
+  console.log(location)
   async function defaultClickHanlder() {
     const response = await loginuser(users.email, users.password);
     localStorage.setItem("token", response.token);
@@ -43,13 +44,19 @@ function Logging() {
     if (signupPwd === signupPwdR) {
       const response = await signupuser(signupEmail, signupPwd);
       localStorage.setItem("token", response.token);
+      console.log(response,"heeeee")
       if(response.success)
       {
+        clickSignInHandler();
         setMessage("you are signed up")
+      }
+      else{
+        alert("wrong password/email")
       }
     }
     if (localStorage.getItem("token")) setLogIn(true);
-    navigate(location?.state?.from?.pathname); 
+    console.log(location?.state?.from?.pathname===undefined); 
+    (location?.state?.from?.pathname===undefined) ? navigate("/") : navigate(location?.state?.from?.pathname);
    
 
   }
@@ -59,10 +66,14 @@ function Logging() {
       localStorage.setItem("token", response.token)
       if(response.success)
       {
+        setTimeout(()=>
+        clickLogInHandler()
+        ,3000)
         setMessage("you are logged in")
       }
       if (localStorage.getItem("token")) setLogIn(true);
-    navigate(location?.state?.from?.pathname); 
+    // navigate(location?.state?.from?.pathname); 
+    (location?.state?.from?.pathname===undefined) ? navigate("/") : navigate(location?.state?.from?.pathname);
 
 
   }
@@ -70,9 +81,10 @@ function Logging() {
     <>
       <div className="header-cart">
         <h1>************ Welcome to Login/Signup ************</h1>
-        <div>{<Toast value={message} />}</div>
+      
       </div>
-      <div className="button-container">
+      
+      <div className="button-container-main">
         <button className="login-btn-ecom" onClick={() => clickLogInHandler()}>
           Login
         </button>
@@ -98,6 +110,7 @@ function Logging() {
         className="login-container"
         style={{ display: displayLogIn, zIndex: "3" }}
       >
+        
         <form className="login-content login-animate" action="">
           <div className="imgcontainer">
             <span className="close" onClick={clickLogInHandler}>
