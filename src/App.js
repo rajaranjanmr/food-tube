@@ -11,6 +11,7 @@ import { WatchLater } from "./pages/WatchLater";
 import { Logging } from "./pages/Logging";
 import { LikedVideo } from "./pages/LikedVideo";
 import PlaylistPage from "./pages/PlaylistPage";
+import { RequiresAuth } from "./RequiresAuth";
 
 function App() {
   return (
@@ -18,14 +19,32 @@ function App() {
       <Navigation/>
       <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/playlist" element={<Playlist />} />
-      <Route path="/logout" element={<Logout />} />
+      <Route path="/playlist" element={
+        <RequiresAuth>
+      <Playlist />
+      </RequiresAuth>
+      } />
+      <Route path="/logout" element={
+      <Logout />
+      } />
       <Route path="/mockman" element={<MockAPI />} />
       <Route path="/videolisting" element={<VideoListing />} />
-      <Route path="/history" element={<History />} />
-      <Route path="/watchlater" element={<WatchLater />} />
+      <Route path="/history" element={
+        <RequiresAuth>
+      <History />
+      </RequiresAuth>
+      } />
+      <Route path="/watchlater" element={
+        <RequiresAuth>
+      <WatchLater />
+      </RequiresAuth>
+      } />
       <Route path="/login" element={<Logging/>} />
-      <Route path="/likedvideo" element={<LikedVideo/>} />
+      <Route path="/likedvideo" element={
+        <RequiresAuth>
+      <LikedVideo/>
+      </RequiresAuth>
+      } />
       <Route path="/playlistpage" element={<PlaylistPage/>} />
       </Routes>
     </div>

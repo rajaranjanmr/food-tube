@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <div class="cards cards-video">
       {videoState.categories.map((x) => {
-        return <HomePageCategory value={x} />;
+        return <HomePageCategory  value={x} />;
       })}
     </div>
   );

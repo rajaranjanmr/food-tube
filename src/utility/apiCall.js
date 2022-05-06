@@ -148,23 +148,23 @@ const getCategories = async () => {
 	}
 };
 
-const signupuser = async (user) => {
-	try {
-		const response = await axios.post("/api/auth/signup", { user });
-		return { token: response.data.encodedToken, success: true };
-	} catch (err) {
-		return { token: "", success: false };
-	}
-};
-const loginuser = async (user) => {
-	try {
-		const response = await axios.post("/api/auth/login", { user });
-		return { token: response.data.encodedToken, success: true };
-	} catch (err) {
+// const signupuser = async (user) => {
+// 	try {
+// 		const response = await axios.post("/api/auth/signup", { user });
+// 		return { token: response.data.encodedToken, success: true };
+// 	} catch (err) {
+// 		return { token: "", success: false };
+// 	}
+// };
+// const loginuser = async (user) => {
+// 	try {
+// 		const response = await axios.post("/api/auth/login", { user });
+// 		return { token: response.data.encodedToken, success: true };
+// 	} catch (err) {
 		
-	return { token: "", success: false };
-	}
-};
+// 	return { token: "", success: false };
+// 	}
+// };
 
 const getPlaylists = async () => {
 	try {
@@ -243,6 +243,26 @@ const deleteFromSpecificPlaylist = async (playlist_id, video_id) => {
 		return { playlist: [], success: false };
 	}
 };
+	const signupuser =  async (email, password)=>{
+		try{
+			const response = await axios.post("/api/auth/signup",{email: email, password: password})
+			return {token : response.data.encodedToken, success: true}
+		}
+		catch(err){
+			console.log(err)
+			return {token:"",success:false}
+		}
+	}
+	const loginuser = async (email,password)=>{
+		try{
+			const response = await axios.post("/api/auth/login",{email: email,password: password})
+			return {token: response.data.encodedToken, Success: true};
+		}
+		catch(err){
+			return {token:"", success: false}
+		}
+	}
+
 export {
 	getAllVideos,
 	getVideoById,

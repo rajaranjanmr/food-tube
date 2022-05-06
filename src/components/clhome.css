@@ -246,18 +246,7 @@ iframe {
   transform: scale(1);
   overflow: hidden;
 }
-.button-container {
-  padding: 5rem;
-  position: relative;
-  left: 39%;
-  top: 60%;
-  display: flex;
-  gap: 1em;
-  width: 24%;
-  text-align: center;
-  background-color: aliceblue;
-  border-radius: 10px;
-}
+
 
 .navbar-item input[type=text] {
     float: right;
@@ -274,18 +263,19 @@ iframe {
     color:black
 
   }
-  .button-container {
-    display: flex;
-    flex-direction: row;
-    width: 500px;
-    background-color: aliceblue;
-    padding: 4rem;
-    position: relative;
-    top: 10rem;
-    gap: 2rem;
-    justify-content: center;
-    left: 40%;
-    border-radius: 15px;
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      width: 500px;
+      background-color: aliceblue;
+      padding: 4rem;
+      position: relative;
+      top: 10rem;
+      gap: 2rem;
+      justify-content: center;
+      left: 40%;
+      border-radius: 15px;
+  
   }
   .button-container button {
     outline: 0;
