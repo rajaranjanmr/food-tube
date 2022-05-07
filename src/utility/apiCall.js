@@ -32,7 +32,6 @@ const addToWatchLater = async (video) => {
 			{ headers }
 			
 		);
-		console.log(response,"its inside api")
 		return { watchlater: response.data.watchlater, success: true };
 	} catch (err) {
 		console.log(err);
@@ -66,7 +65,6 @@ const addToLikedVideos = async (video) => {
 			{ video },
 			{ headers }
 		);
-		console.log('its inside addto lied video',response)
 		return { likes: response.data.likes, success: true };
 	} catch (err) {
 		console.log(err);
@@ -148,24 +146,6 @@ const getCategories = async () => {
 	}
 };
 
-const signupuser = async (user) => {
-	try {
-		const response = await axios.post("/api/auth/signup", { user });
-		return { token: response.data.encodedToken, success: true };
-	} catch (err) {
-		return { token: "", success: false };
-	}
-};
-const loginuser = async (user) => {
-	try {
-		const response = await axios.post("/api/auth/login", { user });
-		return { token: response.data.encodedToken, success: true };
-	} catch (err) {
-		
-	return { token: "", success: false };
-	}
-};
-
 const getPlaylists = async () => {
 	try {
 		const response = await axios.get("/api/user/playlists", { headers });
@@ -178,13 +158,11 @@ const getPlaylists = async () => {
 };
 const addPlaylist = async (playlist) => {
 	try {
-		console.log('haha',playlist)
 		const response = await axios.post(
 			"/api/user/playlists",
 			{ playlist: playlist },
 			{ headers }
 		);
-		console.log("response inside api",response.data.playlists)
 		return { playlists: response.data.playlists, success: true };
 	} catch (err) {
 		console.log(err);
@@ -243,6 +221,26 @@ const deleteFromSpecificPlaylist = async (playlist_id, video_id) => {
 		return { playlist: [], success: false };
 	}
 };
+	const signupuser =  async (email, password)=>{
+		try{
+			const response = await axios.post("/api/auth/signup",{email: email, password: password})
+			return {token : response.data.encodedToken, success: true}
+		}
+		catch(err){
+			console.log(err)
+			return {token:"",success:false}
+		}
+	}
+	const loginuser = async (email,password)=>{
+		try{
+			const response = await axios.post("/api/auth/login",{email: email,password: password})
+			return {token: response.data.encodedToken, Success: true};
+		}
+		catch(err){
+			return {token:"", success: false}
+		}
+	}
+
 export {
 	getAllVideos,
 	getVideoById,

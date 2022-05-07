@@ -3,10 +3,9 @@ import {useVideoContext} from "../context/video-page-context"
 import img1 from "../assets/images/biryaniimg.jpeg" 
 function HomePageCategory(props){
     const { videoDispatch } = useVideoContext();
-    console.log(props.value.categoryName,"its in context")
     return(
         <div className="card">
-      <img className="thumbnail" src={props.value.image} alt="biryani" style={{ width: "100%" }}  onClick={console.log("its card")}/>
+      <img className="thumbnail" src={props.value.image} alt="biryani" style={{ width: "100%" }} />
       <div className="title-video">{props.value.title}</div>
       <div className="description-video">{props.value.description}</div>
       <div className="category-name">{props.value.categoryToBeShown}</div>

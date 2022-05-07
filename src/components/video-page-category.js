@@ -14,8 +14,14 @@ import {
 } from "../utility/apiCall";
 import "./dropdown.css";
 import "../components/modal.css";
+import { useAuth } from "../context/auth-context";
+import { Navigate, useNavigate } from "react-router-dom";
+
 
 function VideoListingPage(props) {
+  const {image,title,description,channel,creator,postDate} = props.value;
+  const navigate= useNavigate();
+  const {isLoggedIn}= useAuth();
   const [displayStyle, setDisplayStyle] = useState("none");
   const { videoState, videoDispatch } = useVideoContext();
   const [playlistName, setPlaylistName] = useState({ list: "" });
@@ -132,17 +138,17 @@ function VideoListingPage(props) {
       </div>
 
       <div className="card">
-        <img className="thumbnail" src={props.value.image} alt="biryani" />
-        <div className="title-video">{props.value.title}</div>
-        <div className="description-video">{props.value.description}</div>
-        <div className="channel-name">{props.value.channel}</div>
+        <img className="thumbnail" src={image} alt="biryani" />
+        <div className="title-video">{title}</div>
+        <div className="description-video">{description}</div>
+        <div className="channel-name">{channel}</div>
 
         <div class="quantity-up-down">
-          {props.value.creator} | {}
+          {creator} | {}
           <div className="like">
             <i
               class="fa fa-thumbs-up"
-              onClick={() => likedClickHandler(props.value)}
+              onClick={() => isLoggedIn ? likedClickHandler(props.value):navigate("/login")}
             >
               2.3k
             </i>
@@ -150,18 +156,18 @@ function VideoListingPage(props) {
           <div className="dislike">
             <i
               class="fa fa-thumbs-down"
-              onClick={() => unlikeClickedHandler(props.value._id)}
+              onClick={() => isLoggedIn ? unlikeClickedHandler(props.value._id): navigate("/login")}
             >
               3.k
             </i>
           </div>
         </div>
-        <div className="timestamp">{props.value.postDate} &nbsp; | &nbsp;</div>
+        <div className="timestamp">{postDate} &nbsp; | &nbsp;</div>
         <div className="card-btn-add">
           <p>
             <button
               className="videolisting"
-              onClick={() => playClickHandler(props.value)}
+              onClick={() => isLoggedIn ? playClickHandler(props.value):navigate("/login")}
             >
               Play
             </button>
@@ -171,14 +177,15 @@ function VideoListingPage(props) {
               <button className="videolisting dropbtn">More</button>
               <div className="dropdown-content">
                 <div className="add-to-watch-later">
-                  <button onClick={() => watchClickHandler(props.value)}>
+                  <button onClick={() => isLoggedIn ? watchClickHandler(props.value): navigate("/login")}>
                     watchlater
                   </button>
                 </div>
                 <div className="add-to-playlist">
                   <button
                     onClick={() => {
-                      modalClickHandler();
+
+                     isLoggedIn ? modalClickHandler(): navigate("/login");
                     }}
                   >
                     playlist

@@ -36,11 +36,9 @@ const VideoReducerFunction = (state, action) => {
 			};
 		case "SET_TEMP_ID":
 			{
-				console.log("Inside setplaylistBY id")
 			return {
 				...state,
 				playlists: state.playlists.map((item) =>{
-					console.log("Debug: ",action.payload._id,item._id)
 					return	(item.id === action.payload.id ? action.payload : item)
 				}),
 			};
