@@ -19,6 +19,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 
 
 function VideoListingPage(props) {
+  const {image,title,description,channel,creator,postDate} = props.value;
   const navigate= useNavigate();
   const {isLoggedIn}= useAuth();
   const [displayStyle, setDisplayStyle] = useState("none");
@@ -137,13 +138,13 @@ function VideoListingPage(props) {
       </div>
 
       <div className="card">
-        <img className="thumbnail" src={props.value.image} alt="biryani" />
-        <div className="title-video">{props.value.title}</div>
-        <div className="description-video">{props.value.description}</div>
-        <div className="channel-name">{props.value.channel}</div>
+        <img className="thumbnail" src={image} alt="biryani" />
+        <div className="title-video">{title}</div>
+        <div className="description-video">{description}</div>
+        <div className="channel-name">{channel}</div>
 
         <div class="quantity-up-down">
-          {props.value.creator} | {}
+          {creator} | {}
           <div className="like">
             <i
               class="fa fa-thumbs-up"
@@ -161,7 +162,7 @@ function VideoListingPage(props) {
             </i>
           </div>
         </div>
-        <div className="timestamp">{props.value.postDate} &nbsp; | &nbsp;</div>
+        <div className="timestamp">{postDate} &nbsp; | &nbsp;</div>
         <div className="card-btn-add">
           <p>
             <button

@@ -1,7 +1,7 @@
 import navimage from "../assets/images/logovideo.png";
 import "./navigation.css";
 import "./clhome.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../context/auth-context";
 function Navigation() {
   const {isLoggedIn} = useAuth();
@@ -19,30 +19,30 @@ function Navigation() {
           <input type="text" placeholder="Search.."/>
           </li>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <Link to="/playlist">Playlist</Link>
+            <NavLink to="/playlist">Playlist</NavLink>
           </li>
           <li>
-            <Link to="/history">History</Link>
+            <NavLink to="/history">History</NavLink>
           </li>
           <li>
-            <Link to="/likedvideo">Liked Video</Link>
+            <NavLink to="/likedvideo">Liked Video</NavLink>
           </li>
           <li>
-            <Link to="/watchlater">WatchLater</Link>
+            <NavLink to="/watchlater">WatchLater</NavLink>
           </li>
           {!isLoggedIn &&
 
           <li>
-            <Link to="/login">Login</Link>
+            <NavLink to="/login">Login</NavLink>
           </li>
 }
 {isLoggedIn &&
 
           <li>
-            <Link to="/logout">Logout</Link>
+            <NavLink to="/logout">Logout</NavLink>
             
           </li>
 }
